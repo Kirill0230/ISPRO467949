@@ -5,7 +5,7 @@ def area(r):
     '''
     принимает радиус окружности и возращает площадь этой окружности
     '''
-    return math.pi * r * r
+    return r * r * math.pi
 
 
 def perimeter(r):
