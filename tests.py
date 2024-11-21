@@ -65,3 +65,4 @@ class TestTriangle(unittest.TestCase):
         self.assertEqual(triangle.perimeter(0.1, 0.25, 0.25), 0.6)
         self.assertEqual(triangle.perimeter(3, 4, 5), 12)
 
+
