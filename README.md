@@ -116,3 +116,9 @@
     Date:   Tue Oct 8 11:14:24 2024 +0300
 
         Был добавлен новый файл rectangle.py
+
+    commit 41dff4b334b35e39dad57f420017bc608398e617 (HEAD -> new_features_467949, origin/new_features_467949)
+    Author: kirusha209 <fokipo99@gmail.com>
+    Date:   Thu Nov 21 16:30:20 2024 +0300
+
+        Добавлены тесты
