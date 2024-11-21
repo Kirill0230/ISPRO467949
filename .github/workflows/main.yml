@@ -1,46 +1,25 @@
-name: Run Unit Tests
+name: Python package
 
-on:
-  push:
-    branches:
-      - new_features_467949
-  pull_request:
-    branches:
-      - new_features_467949
+on: [push]
 
 jobs:
-  test-on-ubuntu:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js (если это JavaScript проект)
-      uses: actions/setup-node@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        node-version: '16'
+        python-version: '3.x'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Run tests
-      run: npm test
-
-  test-on-windows:
-    runs-on: windows-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js (если это JavaScript проект)
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
+      run: |
+        pytest
