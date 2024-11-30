@@ -6,8 +6,8 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]  # Указываем операционные системы для тестов
-    runs-on: ${{ matrix.os }}  # В зависимости от текущей операционной системы из матрицы
+        os: [ubuntu-latest, windows-latest]  # Тесты будут запускаться на Linux и Windows
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Check out code
@@ -22,10 +22,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
 
-    - name: Install dependencies
+    - name: Install pytest
       run: |
-        pip install -r requirements.txt
+        pip install pytest
 
     - name: Run tests
       run: |
-        pytest
+        pytest .
